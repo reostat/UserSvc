@@ -1,0 +1,40 @@
+@UserSvc_HostAddress = http://localhost:5243
+
+# Get all users
+GET {{UserSvc_HostAddress}}/api/users
+Accept: application/json
+###
+
+# Get user by id
+GET {{UserSvc_HostAddress}}/api/users/1
+Accept: application/json
+###
+
+# Delete user
+DELETE {{UserSvc_HostAddress}}/api/users/1
+Accept: application/json
+###
+
+# Create user
+POST {{UserSvc_HostAddress}}/api/users/
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "User",
+    "lastName": "User",
+    "phone": "2342342334",
+    "dateOfBirth": "1980-04-12"
+}
+###
+
+# Update user
+PUT {{UserSvc_HostAddress}}/api/users/3
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "User2",
+    "lastName": "User2",
+    "dateOfBirth": "1982-04-12"
+}
